@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="light" lang="en" style="">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Order Now | PocketPolaroid</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#765848",
+                        "primary-container": "#ffd6c2",
+                        "on-primary-container": "#7a5b4b",
+                        "secondary": "#76565e",
+                        "surface-bright": "#fff8f6",
+                        "surface-variant": "#f1dfd8",
+                        "on-surface": "#231a16",
+                        "on-surface-variant": "#50443f",
+                        "outline": "#82746e",
+                        "outline-variant": "#d4c3bc",
+                        "surface-container-low": "#fff1ec",
+                        "surface-container-high": "#f7e4de",
+                        "surface-container-highest": "#f1dfd8",
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    "spacing": { "polaroid-padding-bottom": "48px", "gutter": "16px", "unit": "8px", "container-margin": "24px", "polaroid-padding-top": "16px" },
+                    "fontFamily": { "label-md": ["Plus Jakarta Sans"], "accent-handwritten": ["Bricolage Grotesque"], "display": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FFF9EB; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .shadow-warm-card { box-shadow: 0 4px 24px rgba(107, 94, 89, 0.05); }
+        .squishy-btn {
+            background: linear-gradient(180deg, #FFD6C2 0%, #FFCBAF 100%);
+            box-shadow: 0 2px 8px rgba(107, 94, 89, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            color: #231a16;
+            cursor: pointer;
+        }
+        .squishy-btn:active { transform: scale(0.96); box-shadow: 0 1px 4px rgba(107, 94, 89, 0.1), inset 0 2px 4px rgba(107, 94, 89, 0.1); }
+        .cute-input {
+            width: 100%; padding: 0.75rem 1rem; border-radius: 0.75rem; border: 2px solid #d4c3bc; background-color: #fff8f6; color: #231a16; font-family: 'Be Vietnam Pro', sans-serif; transition: all 0.2s ease;
+        }
+        .cute-input:focus { outline: none; border-color: #765848; box-shadow: 0 0 0 4px rgba(255, 214, 194, 0.4); }
+        .receipt-edge { background-image: radial-gradient(circle at 5px 0px, transparent 6px, white 7px); background-size: 20px 20px; background-position: top center; }
+        @keyframes popIn { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface antialiased overflow-x-hidden">
+
+    <!-- Mobile Responsive Header (No start printing button here) -->
+    <header class="bg-surface/80 backdrop-blur-md full-width top-0 sticky z-50 shadow-sm">
+        <div class="flex justify-between items-center w-full px-gutter py-4 max-w-7xl mx-auto md:px-8">
+            <a href="index.html" class="font-display text-[24px] font-bold text-primary hover:scale-105 transition-transform duration-200">
+                PocketPolaroid
+            </a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="aboutus.html">About Us</a>
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (No start printing button here either) -->
+        <div id="mobile-menu" class="hidden flex-col bg-surface-bright/95 backdrop-blur-md absolute top-full left-0 w-full border-t border-outline-variant/30 shadow-lg p-6 gap-6 z-40">
+            <nav class="flex flex-col gap-4 text-center">
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="index.html">Home</a>
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="aboutus.html">About Us</a>
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="services.html">Services</a>
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow flex flex-col items-center justify-center px-container-margin py-12 w-full max-w-3xl mx-auto md:py-20">
+        
+        <div class="text-center mb-10">
+            <h1 class="font-display text-[32px] md:text-[48px] font-bold text-primary mb-2">Place Your Order</h1>
+            <p class="font-body-lg text-on-surface-variant">Fill in the details below and we'll get your prints ready!</p>
+        </div>
+
+        <div class="bg-white w-full rounded-[24px] shadow-warm-card p-6 md:p-10 border border-outline-variant/30">
+            
+            <form id="order-form" action="https://formsubmit.co/pocketpolaroid2@gmail.com" method="POST" enctype="multipart/form-data" target="hidden_iframe" class="flex flex-col gap-6">
+                
+                <input type="hidden" name="_subject" value="New PocketPolaroid Order!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <!-- 1. Personal Details -->
+                <div class="flex flex-col gap-6">
+                    <div>
+                        <label class="block font-label-md text-on-surface mb-2">Full Name <span class="text-error">*</span></label>
+                        <input type="text" name="Name" required class="cute-input" placeholder="e.g. Clara">
+                    </div>
+                    
+                    <div>
+                        <label class="block font-label-md text-on-surface mb-2">Contact Method <span class="text-error">*</span></label>
+                        <div class="flex gap-4 mb-3">
+                            <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                                <input type="radio" name="Contact_Method_Chosen" value="Email" id="radio-email" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" checked> Email
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                                <input type="radio" name="Contact_Method_Chosen" value="Phone" id="radio-phone" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant"> Phone
+                            </label>
+                        </div>
+                        <div id="email-container">
+                            <input type="email" id="input-email" name="Email" required class="cute-input" placeholder="hello@example.com">
+                        </div>
+                        <div id="phone-container" class="hidden">
+                            <input type="tel" id="input-phone" name="Phone" class="cute-input" placeholder="+60 12-345 6789">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-outline-variant/40 my-2">
+
+                <!-- 2. Photos & Quantity -->
+                <div>
+                    <label class="block font-label-md text-on-surface mb-2">Photo Option <span class="text-error">*</span></label>
+                    <div class="flex gap-6 mt-2 mb-4">
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Photo_Option" value="Upload Own Image" id="source-upload" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" checked> Upload Own Image
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Photo_Option" value="Help Me Film" id="source-film" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant"> Help Me Film
+                        </label>
+                    </div>
+
+                    <div id="upload-container" class="mb-6 relative">
+                        <div class="w-full border-2 border-dashed border-outline-variant rounded-xl bg-surface-container-low p-6 text-center hover:bg-primary-container/20 transition-colors group">
+                            <span class="material-symbols-outlined text-[32px] text-outline mb-1 group-hover:text-primary transition-colors">cloud_upload</span>
+                            <p class="font-label-md text-primary text-sm mb-1">Click to attach photos</p>
+                            <input type="file" id="file-upload" name="attachment" multiple class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*">
+                        </div>
+                        <div id="preview-container" class="flex flex-wrap gap-4 mt-4"></div>
+                    </div>
+
+                    <label class="block font-label-md text-on-surface mb-2">Quantity of Photos <span class="text-error">*</span></label>
+                    <select id="quantity-selector" name="Quantity" required class="cute-input cursor-pointer">
+                        <option value="" disabled selected>Select quantity (1-10)</option>
+                        <option value="1">1 piece</option>
+                        <option value="2">2 pieces</option>
+                        <option value="3">3 pieces</option>
+                        <option value="4">4 pieces</option>
+                        <option value="5">5 pieces</option>
+                        <option value="6">6 pieces</option>
+                        <option value="7">7 pieces</option>
+                        <option value="8">8 pieces</option>
+                        <option value="9">9 pieces</option>
+                        <option value="10">10 pieces</option>
+                    </select>
+                    
+                    <div id="price-display" class="hidden mt-4 bg-surface-container-low border border-outline-variant/50 rounded-xl p-4 flex items-center justify-between">
+                        <span class="font-label-md text-on-surface-variant text-sm">Total Price:</span>
+                        <span class="font-display font-bold text-primary text-[20px]">RM <span id="calculated-total">0.00</span></span>
+                    </div>
+                </div>
+
+                <hr class="border-outline-variant/40 my-2">
+
+                <!-- 3. Customizations -->
+                <div>
+                    <label class="block font-label-md text-on-surface mb-2">Customizable Template?</label>
+                    <div class="flex gap-6 mt-2">
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Customizable_Template" value="Yes" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant"> Yes
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Customizable_Template" value="No" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" checked> No
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-label-md text-on-surface mb-2">Photography Theme?</label>
+                    <div class="flex gap-6 mt-2">
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Photography_Theme" value="Yes" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant"> Yes
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Photography_Theme" value="No" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" checked> No
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-label-md text-on-surface mb-2">Add Cute Stickers?</label>
+                    <div class="flex gap-6 mt-2">
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Stickers" value="Yes" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant"> Yes, decorate them! ✨
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Stickers" value="No" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" checked> No thanks.
+                        </label>
+                    </div>
+                </div>
+
+                <hr class="border-outline-variant/40 my-2">
+
+                <!-- 4. Fulfillment -->
+                <div>
+                    <label class="block font-label-md text-on-surface mb-2">Delivery Method <span class="text-error">*</span></label>
+                    <div class="flex gap-6 mt-2 mb-6">
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Delivery_Method" value="In Campus" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" checked> In Campus
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer font-body-md text-on-surface-variant">
+                            <input type="radio" name="Delivery_Method" value="Self-Pickup" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant"> Self-Pickup
+                        </label>
+                    </div>
+
+                    <label class="block font-label-md text-on-surface mb-2">Payment Method <span class="text-error">*</span></label>
+                    <select id="payment-selector" name="Payment_Method" required class="cute-input cursor-pointer">
+                        <option value="" disabled selected>Select a payment method</option>
+                        <option value="Cash Only">Cash Only</option>
+                        <option value="DuitNow QR">DuitNow QR</option>
+                        <option value="TNG e-Wallet">TNG e-Wallet</option>
+                    </select>
+
+                    <div id="qr-container" class="hidden mt-4 text-center border border-outline-variant/50 rounded-xl p-6 bg-surface-container-low transition-all">
+                        <p class="font-label-md text-on-surface mb-3" id="qr-title">Scan to Pay</p>
+                        <div class="w-72 h-72 mx-auto bg-white rounded-lg flex items-center justify-center overflow-hidden border border-outline-variant/30 shadow-sm relative p-2">
+                            <img id="qr-duitnow" src="images/maybank qr.png" alt="DuitNow QR" class="w-full h-full object-contain hidden">
+                            <img id="qr-tng" src="images/tng qr.jpg" alt="TNG QR" class="w-full h-full object-contain hidden">
+                            <span id="qr-placeholder" class="text-sm text-outline-variant px-4">Image Missing</span>
+                        </div>
+                        <p class="text-xs text-on-surface-variant mt-3">Please snap a screenshot of your receipt. We will request it via email/phone!</p>
+                    </div>
+                </div>
+
+                <hr class="border-outline-variant/40 my-2">
+
+                <div>
+                    <label class="block font-label-md text-on-surface mb-2">Additional Notes (Optional)</label>
+                    <textarea name="Notes" rows="3" class="cute-input resize-none" placeholder="Any specific instructions for your order?"></textarea>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" id="submit-btn" class="squishy-btn w-full py-4 rounded-xl font-display font-bold text-[18px] text-on-primary-container mt-4 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">send</span> Send Order
+                </button>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low border-t border-outline-variant/30 w-full mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-container-margin py-12 max-w-7xl mx-auto gap-8">
+            <a href="index.html" class="font-display text-[20px] font-bold text-primary cursor-pointer hover:text-secondary transition-colors">PocketPolaroid</a>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.instagram.com/pocketpolaroids_?igsh=bjdxZXkwajd0MHk2&amp;utm_source=qr" target="_blank">Instagram</a>
+                <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.tiktok.com/@pocketpolaroids_?_r=1&amp;_t=ZS-98ekKNzyJ73" target="_blank">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INVISIBLE IFRAME FOR FORM SUBMISSION -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- CUTE RECEIPT MODAL -->
+    <div id="receipt-modal" class="hidden fixed inset-0 z-[100] bg-on-surface/40 backdrop-blur-sm items-center justify-center p-4 transition-all">
+        <div class="bg-white w-full max-w-sm rounded-xl shadow-2xl relative flex flex-col animate-[popIn_0.3s_ease-out]">
+            <div class="bg-primary text-white text-center py-6 px-4 rounded-t-xl">
+                <span class="material-symbols-outlined text-[40px] mb-1">favorite</span>
+                <h2 class="font-display text-[24px] font-bold tracking-tight">Thanks for Your Order!</h2>
+                <p class="font-accent-handwritten text-lg opacity-90">We've received your details ✨</p>
+            </div>
+            
+            <div class="w-full h-3 receipt-edge -mt-1 relative z-10"></div>
+            
+            <div class="p-6 pt-4 border-b-2 border-dashed border-outline-variant/50">
+                <h3 class="font-label-md text-on-surface-variant text-center mb-5 uppercase tracking-widest text-xs">Official Receipt</h3>
+                <div class="space-y-3 font-body-md text-on-surface text-sm">
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Photo Option:</span><span id="receipt-source" class="font-bold"></span></div>
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Quantity:</span><span id="receipt-qty" class="font-bold"></span></div>
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Custom Template:</span><span id="receipt-template" class="font-bold"></span></div>
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Photo Theme:</span><span id="receipt-theme" class="font-bold"></span></div>
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Cute Stickers:</span><span id="receipt-stickers" class="font-bold"></span></div>
+                    <hr class="border-outline-variant/30 my-2">
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Delivery:</span><span id="receipt-delivery" class="font-bold"></span></div>
+                    <div class="flex justify-between items-center"><span class="text-on-surface-variant">Payment:</span><span id="receipt-payment" class="font-bold"></span></div>
+                </div>
+            </div>
+            
+            <div class="p-6 bg-surface-container-lowest rounded-b-xl">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="font-display font-bold text-lg text-on-surface">Total</span>
+                    <span id="receipt-total" class="font-display font-bold text-[28px] text-primary"></span>
+                </div>
+                <button onclick="window.location.href='index.html'" class="squishy-btn w-full py-3 rounded-full font-label-md text-on-primary-container text-center">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // --- Mobile Menu Toggle ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuBtn.querySelector('.material-symbols-outlined');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                if (mobileMenu.classList.contains('flex')) {
+                    menuIcon.textContent = 'close';
+                } else {
+                    menuIcon.textContent = 'menu';
+                }
+            });
+        });
+
+        // --- Contact Method Toggle ---
+        const radioEmail = document.getElementById('radio-email');
+        const radioPhone = document.getElementById('radio-phone');
+        const emailContainer = document.getElementById('email-container');
+        const phoneContainer = document.getElementById('phone-container');
+        const inputEmail = document.getElementById('input-email');
+        const inputPhone = document.getElementById('input-phone');
+
+        function toggleContactMethod() {
+            if (radioEmail.checked) {
+                emailContainer.classList.remove('hidden');
+                phoneContainer.classList.add('hidden');
+                inputEmail.required = true;
+                inputPhone.required = false;
+                inputPhone.value = ''; 
+            } else {
+                phoneContainer.classList.remove('hidden');
+                emailContainer.classList.add('hidden');
+                inputPhone.required = true;
+                inputEmail.required = false;
+                inputEmail.value = ''; 
+            }
+        }
+        radioEmail.addEventListener('change', toggleContactMethod);
+        radioPhone.addEventListener('change', toggleContactMethod);
+
+        // --- Photo Upload Preview & Delete Logic ---
+        const fileUpload = document.getElementById('file-upload');
+        const previewContainer = document.getElementById('preview-container');
+        let selectedFiles = [];
+
+        fileUpload.addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            selectedFiles = selectedFiles.concat(files);
+            updateFileInput();
+            renderPreviews();
+        });
+
+        function renderPreviews() {
+            previewContainer.innerHTML = ''; 
+            selectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const div = document.createElement('div');
+                    div.className = 'relative w-24 h-24 rounded-lg overflow-hidden border border-outline-variant shadow-sm group';
+                    div.innerHTML = `
+                        <img src="${e.target.result}" class="w-full h-full object-cover">
+                        <button type="button" onclick="removeFile(${index})" class="absolute top-1 right-1 bg-white/90 hover:bg-error hover:text-white text-error rounded-full w-6 h-6 flex items-center justify-center transition-colors shadow-sm">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    `;
+                    previewContainer.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        window.removeFile = function(index) {
+            selectedFiles.splice(index, 1); 
+            updateFileInput(); 
+            renderPreviews(); 
+        };
+
+        function updateFileInput() {
+            const dataTransfer = new DataTransfer();
+            selectedFiles.forEach(file => dataTransfer.items.add(file));
+            fileUpload.files = dataTransfer.files;
+        }
+
+        // --- Photo Source Toggle ---
+        const sourceUpload = document.getElementById('source-upload');
+        const sourceFilm = document.getElementById('source-film');
+        const uploadContainer = document.getElementById('upload-container');
+
+        function togglePhotoSource() {
+            if (sourceUpload.checked) {
+                uploadContainer.classList.remove('hidden');
+            } else {
+                uploadContainer.classList.add('hidden');
+            }
+        }
+        sourceUpload.addEventListener('change', togglePhotoSource);
+        sourceFilm.addEventListener('change', togglePhotoSource);
+
+        // --- Live Price Calculator ---
+        const quantitySelector = document.getElementById('quantity-selector');
+        const priceDisplay = document.getElementById('price-display');
+        const calculatedTotal = document.getElementById('calculated-total');
+        const pricePerPiece = 1.00;
+
+        quantitySelector.addEventListener('change', function() {
+            const selectedQuantity = parseInt(this.value);
+            if (!isNaN(selectedQuantity)) {
+                const total = (selectedQuantity * pricePerPiece).toFixed(2);
+                calculatedTotal.textContent = total;
+                priceDisplay.classList.remove('hidden');
+            }
+        });
+
+        // --- Payment & QR Code Logic ---
+        const paymentSelector = document.getElementById('payment-selector');
+        const qrContainer = document.getElementById('qr-container');
+        const qrTitle = document.getElementById('qr-title');
+        const qrDuitnow = document.getElementById('qr-duitnow');
+        const qrTng = document.getElementById('qr-tng');
+        const qrPlaceholder = document.getElementById('qr-placeholder');
+
+        paymentSelector.addEventListener('change', function() {
+            qrDuitnow.classList.add('hidden');
+            qrTng.classList.add('hidden');
+            qrPlaceholder.classList.add('hidden');
+
+            if (this.value === 'DuitNow QR') {
+                qrContainer.classList.remove('hidden');
+                qrTitle.textContent = 'Scan DuitNow to Pay';
+                qrDuitnow.classList.remove('hidden');
+            } else if (this.value === 'TNG e-Wallet') {
+                qrContainer.classList.remove('hidden');
+                qrTitle.textContent = 'Scan TNG to Pay';
+                qrTng.classList.remove('hidden');
+            } else {
+                qrContainer.classList.add('hidden');
+            }
+        });
+
+        // --- Iframe Submission Logic ---
+        const form = document.getElementById('order-form');
+        const modal = document.getElementById('receipt-modal');
+        const submitBtn = document.getElementById('submit-btn');
+        let isSubmitting = false;
+
+        form.addEventListener('submit', function() {
+            isSubmitting = true;
+            submitBtn.innerHTML = `<span class="material-symbols-outlined animate-spin">refresh</span> Sending...`;
+            submitBtn.classList.add('opacity-70', 'pointer-events-none');
+
+            const source = document.querySelector('input[name="Photo_Option"]:checked').value;
+            const qty = document.querySelector('[name="Quantity"]').value;
+            const template = document.querySelector('input[name="Customizable_Template"]:checked').value;
+            const theme = document.querySelector('input[name="Photography_Theme"]:checked').value;
+            const stickers = document.querySelector('input[name="Stickers"]:checked').value;
+            const delivery = document.querySelector('input[name="Delivery_Method"]:checked').value;
+            const payment = document.querySelector('[name="Payment_Method"]').value;
+            const total = (parseInt(qty) * pricePerPiece).toFixed(2);
+            
+            document.getElementById('receipt-source').textContent = source;
+            document.getElementById('receipt-qty').textContent = qty + ' pieces';
+            document.getElementById('receipt-template').textContent = template;
+            document.getElementById('receipt-theme').textContent = theme;
+            document.getElementById('receipt-stickers').textContent = stickers;
+            document.getElementById('receipt-delivery').textContent = delivery;
+            document.getElementById('receipt-payment').textContent = payment;
+            document.getElementById('receipt-total').textContent = 'RM ' + total;
+        });
+
+        document.getElementById('hidden_iframe').addEventListener('load', function() {
+            if (isSubmitting) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                isSubmitting = false;
+                submitBtn.innerHTML = `<span class="material-symbols-outlined">send</span> Send Order`;
+                submitBtn.classList.remove('opacity-70', 'pointer-events-none');
+            }
+        });
+    </script>
+</body>
+</html>
