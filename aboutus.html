@@ -1,449 +1,323 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>About Us | PocketPolaroid</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
+<!DOCTYPE html>
+<html class="scroll-smooth light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>About Us | PocketPolaroid</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "tertiary": "#615e54",
-                        "error": "#ba1a1a",
-                        "surface-bright": "#fff8f6",
-                        "outline-variant": "#d4c3bc",
-                        "on-error-container": "#93000a",
-                        "inverse-on-surface": "#ffede7",
-                        "secondary-fixed-dim": "#e5bcc5",
-                        "primary-fixed-dim": "#e6beab",
-                        "on-tertiary-fixed": "#1d1c13",
-                        "surface-container-high": "#f7e4de",
-                        "error-container": "#ffdad6",
-                        "on-secondary": "#ffffff",
-                        "surface-container-highest": "#f1dfd8",
-                        "on-primary-container": "#7a5b4b",
-                        "on-secondary-container": "#7a5a62",
-                        "on-surface": "#231a16",
-                        "primary-fixed": "#ffdbca",
-                        "surface-tint": "#765848",
-                        "surface-container": "#fdeae3",
-                        "secondary": "#76565e",
-                        "on-secondary-fixed-variant": "#5c3f46",
-                        "on-error": "#ffffff",
-                        "tertiary-container": "#e4ded1",
-                        "on-surface-variant": "#50443f",
-                        "tertiary-fixed": "#e8e2d4",
-                        "secondary-fixed": "#ffd9e1",
-                        "primary-container": "#ffd6c2",
-                        "on-background": "#231a16",
-                        "secondary-container": "#ffd5de",
-                        "on-secondary-fixed": "#2c141b",
-                        "on-primary-fixed-variant": "#5c4132",
-                        "surface-variant": "#f1dfd8",
-                        "on-tertiary": "#ffffff",
-                        "surface": "#fff8f6",
-                        "surface-container-lowest": "#ffffff",
-                        "on-tertiary-container": "#656257",
-                        "inverse-primary": "#e6beab",
                         "primary": "#765848",
-                        "on-primary": "#ffffff",
+                        "primary-container": "#ffd6c2",
+                        "on-primary-container": "#7a5b4b",
+                        "secondary": "#76565e",
+                        "surface-bright": "#fff8f6",
+                        "surface-variant": "#f1dfd8",
+                        "on-surface": "#231a16",
+                        "on-surface-variant": "#50443f",
                         "outline": "#82746e",
+                        "outline-variant": "#d4c3bc",
                         "surface-container-low": "#fff1ec",
-                        "on-primary-fixed": "#2b160a",
-                        "tertiary-fixed-dim": "#cbc6b9",
-                        "inverse-surface": "#392e2a",
-                        "surface-dim": "#e8d6d0",
-                        "background": "#fff8f6",
-                        "on-tertiary-fixed-variant": "#49473d"
+                        "surface-container-high": "#f7e4de",
+                        "surface-container-lowest": "#ffffff"
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "polaroid-padding-bottom": "48px",
-                        "gutter": "16px",
-                        "unit": "8px",
-                        "container-margin": "24px",
-                        "polaroid-padding-top": "16px"
-                    },
-                    "fontFamily": {
-                        "label-md": ["Plus Jakarta Sans"],
-                        "accent-handwritten": ["Bricolage Grotesque"],
-                        "display": ["Plus Jakarta Sans"],
-                        "body-md": ["Be Vietnam Pro"],
-                        "headline-lg-mobile": ["Plus Jakarta Sans"],
-                        "body-lg": ["Be Vietnam Pro"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "headline-lg": ["Plus Jakarta Sans"]
-                    },
-                    "fontSize": {
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
-                        "accent-handwritten": ["20px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
-                    }
+                    "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    "spacing": { "polaroid-padding-bottom": "48px", "gutter": "16px", "unit": "8px", "container-margin": "24px", "polaroid-padding-top": "16px" },
+                    "fontFamily": { "label-md": ["Plus Jakarta Sans"], "accent-handwritten": ["Bricolage Grotesque"], "display": ["Plus Jakarta Sans"], "body-md": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"] }
                 }
             }
         }
     </script>
-<style>
-        .polaroid-shadow {
-            box-shadow: 0 4px 12px rgba(107, 94, 89, 0.05), 0 1px 3px rgba(107, 94, 89, 0.08);
-        }
+    <style>
+        body { background-color: #FFF9EB; }
+        .polaroid-shadow { box-shadow: 0 4px 12px rgba(107, 94, 89, 0.05), 0 1px 3px rgba(107, 94, 89, 0.08); }
         .squishy-btn {
             background: linear-gradient(180deg, #FFD6C2 0%, #FFCBAF 100%);
             box-shadow: 0 2px 8px rgba(107, 94, 89, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.8);
             transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            color: #231a16;
         }
-        .squishy-btn:active {
-            transform: scale(0.96);
-            box-shadow: 0 1px 4px rgba(107, 94, 89, 0.1), inset 0 2px 4px rgba(107, 94, 89, 0.1);
-        }
+        .squishy-btn:active { transform: scale(0.96); box-shadow: 0 1px 4px rgba(107, 94, 89, 0.1), inset 0 2px 4px rgba(107, 94, 89, 0.1); }
         .rotate-card-even { transform: rotate(1deg); }
         .rotate-card-odd { transform: rotate(-1.5deg); }
-        .rotate-card-special { transform: rotate(0.5deg); }
-        
-        .washi-tape {
-            background-color: #FAD0D9;
-            opacity: 0.8;
-            transform: rotate(-3deg);
-            box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-        }
+        .washi-tape { background-color: #FAD0D9; opacity: 0.8; transform: rotate(-3deg); box-shadow: 1px 1px 2px rgba(0,0,0,0.05); }
     </style>
 </head>
-<body class="bg-surface-bright text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col overflow-x-hidden">
-<!-- TopAppBar -->
-<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md full-width top-0 sticky z-50 shadow-sm">
-<div class="flex justify-between items-center w-full px-gutter py-4 max-w-7xl mx-auto">
-<a class="font-display text-headline-md font-bold text-primary dark:text-inverse-primary hover:scale-105 transition-transform duration-200" href="index.html">
+<body class="bg-surface-bright text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+
+    <!-- Mobile Responsive Header -->
+    <header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md full-width top-0 sticky z-50 shadow-sm">
+        <div class="flex justify-between items-center w-full px-gutter md:px-8 py-4 max-w-7xl mx-auto relative z-50">
+            <a href="index.html" class="font-display text-[24px] font-bold text-primary hover:scale-105 transition-transform duration-200">
                 PocketPolaroid
             </a>
-<nav class="hidden md:flex gap-8 items-center">
-<a class="font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:scale-105 duration-200" href="index.html">Home</a>
-<a aria-current="page" class="font-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:scale-105 transition-transform duration-200" href="aboutus.html">About Us</a>
-<a class="font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:scale-105 duration-200" href="services.html">Services</a>
-<a class="font-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors hover:scale-105 duration-200" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="hidden md:flex items-center justify-center gap-2 px-6 py-2 rounded-full squishy-btn font-label-md text-on-surface" onclick="window.location.href='services.html'">
-                    Start Printing
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="font-label-md text-primary border-b-2 border-primary pb-1" href="aboutus.html">About Us</a>
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center gap-2 md:gap-4">
+                <a href="order.html" class="hidden md:flex squishy-btn px-6 py-2.5 rounded-full font-label-md text-on-primary-container items-center gap-2">Start Printing</a>
+                <button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">shopping_cart</span>
                 </button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:scale-105 duration-200">
-<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button class="md:hidden p-2 text-on-surface-variant">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
-</button>
-</div>
-</div>
-</header>
-<!-- Main Content -->
-<main class="flex-grow w-full max-w-7xl mx-auto px-container-margin py-12 md:py-20 flex flex-col gap-24">
-<!-- Hero / Story Section -->
-<section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-<div class="md:col-span-7 flex flex-col gap-6 order-2 md:order-1">
-<div class="inline-flex w-max px-4 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-sm shadow-sm rotate-1">
-<span class="material-symbols-outlined text-[16px] mr-1" data-weight="fill">favorite</span> Our Story
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex-col bg-surface-bright/95 backdrop-blur-md absolute top-full left-0 w-full border-t border-outline-variant/30 shadow-lg p-6 gap-6 z-40">
+            <nav class="flex flex-col gap-4 text-center">
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="index.html">Home</a>
+                <a class="font-label-md text-lg text-primary" href="aboutus.html">About Us</a>
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="services.html">Services</a>
+                <a class="font-label-md text-lg text-on-surface hover:text-primary" href="contact.html">Contact</a>
+            </nav>
+            <a href="order.html" class="squishy-btn w-full py-3.5 rounded-xl font-display font-bold text-[16px] text-center text-on-primary-container shadow-sm">
+                Start Printing
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-container-margin py-12 md:py-20 flex flex-col gap-24">
+        <!-- Hero / Story Section -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7 flex flex-col gap-6 order-2 md:order-1">
+                <div class="inline-flex w-max px-4 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-sm shadow-sm rotate-1">
+                    <span class="material-symbols-outlined text-[16px] mr-1">favorite</span> Our Story
                 </div>
-<h1 class="font-display text-display text-primary">Capturing Fleeting Moments, Tangibly.</h1>
-<p class="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                <h1 class="font-display text-[40px] leading-[48px] md:text-[48px] font-bold text-primary tracking-tight">Capturing Fleeting Moments, Tangibly.</h1>
+                <p class="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
                     It started with a shoebox full of faded memories and a desire to hold our digital lives in our hands again. In a world of endless camera rolls, we wanted to bring back the magic of waiting for a photo to develop—the tactile joy of a physical print you can pin to your wall, tuck into a diary, or give to a friend.
                 </p>
-<p class="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                <p class="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
                     PocketPolaroid was born from this nostalgia. We blend modern mobile convenience with the charming, slightly imperfect aesthetic of retro instant cameras. We believe every memory deserves a frame, a little handwritten note, and a physical space in your life.
                 </p>
-</div>
-<div class="md:col-span-5 order-1 md:order-2 relative">
-<div class="absolute -top-4 -right-4 w-24 h-6 washi-tape z-10"></div>
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even mx-auto max-w-sm relative">
-<div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative">
-<img class="w-full h-full object-cover" data-alt="A vintage, stylized image of a group of friends laughing together on a sun-drenched beach, captured with the aesthetic of a classic instant film camera. The lighting is warm and slightly blown out, evoking a strong sense of nostalgia and carefree joy. The overall color palette leans heavily into soft pastels and faded summer hues, perfectly aligning with the cute, warm, soft minimalist brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpv8eDFAj5ujeaavJMbonQCKsO6JcQy83hYBaisQp8VXx01UFjoD1uhNltXfL1LFO0Q7o6FdzItGir6YqigYyZ8ND8SyftJwMAp0m__UPfsmUA21NxprzeIqxbfus7HA6fS2X0K2IMULgh0-sDms-_mOVarWCi4Z369apVxpGpOBhaXbyCTQT277LpudIoxgkir8Fiskc1wy3Etns7-p5yfZXJ4YU9WbTWuNSKGgLqBb7FI7AacQoCBg">
-</div>
-<div class="absolute bottom-4 left-0 w-full text-center">
-<span class="font-accent-handwritten text-accent-handwritten text-primary">where it all began...</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Mission & Vision (Bento Grid) -->
-<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="bg-surface-container-high rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-[320px] polaroid-shadow">
-<div class="absolute top-0 right-0 p-8 opacity-10">
-<span class="material-symbols-outlined text-[120px]" data-weight="fill">photo_camera</span>
-</div>
-<div class="relative z-10">
-<h2 class="font-headline-lg md:font-display text-headline-lg-mobile md:text-headline-lg text-primary mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary" data-weight="fill">auto_awesome</span> Our Mission
+            </div>
+            <div class="md:col-span-5 order-1 md:order-2 relative">
+                <div class="absolute -top-4 -right-4 w-24 h-6 washi-tape z-10"></div>
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even mx-auto max-w-sm relative">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative">
+                        <img class="w-full h-full object-cover" alt="Vintage beach polaroid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpv8eDFAj5ujeaavJMbonQCKsO6JcQy83hYBaisQp8VXx01UFjoD1uhNltXfL1LFO0Q7o6FdzItGir6YqigYyZ8ND8SyftJwMAp0m__UPfsmUA21NxprzeIqxbfus7HA6fS2X0K2IMULgh0-sDms-_mOVarWCi4Z369apVxpGpOBhaXbyCTQT277LpudIoxgkir8Fiskc1wy3Etns7-p5yfZXJ4YU9WbTWuNSKGgLqBb7FI7AacQoCBg">
+                    </div>
+                    <div class="absolute bottom-4 left-0 w-full text-center">
+                        <span class="font-accent-handwritten text-accent-handwritten text-primary">where it all began...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision (Bento Grid) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-surface-container-high rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-[320px] polaroid-shadow">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <span class="material-symbols-outlined text-[120px]">photo_camera</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-headline-lg md:font-display md:text-[32px] font-bold text-primary mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">auto_awesome</span> Our Mission
                     </h2>
-<p class="font-body-md text-on-surface-variant text-lg">
+                    <p class="font-body-md text-on-surface-variant text-lg">
                         To transform fleeting digital pixels into permanent, tactile keepsakes. We empower memory-keepers to easily print their everyday moments, preserving the warmth and authenticity of real life through beautiful, physical photographs that can be cherished for generations.
                     </p>
-</div>
-</div>
-<div class="bg-primary-container rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-[320px] polaroid-shadow">
-<div class="absolute bottom-0 left-0 p-8 opacity-10">
-<span class="material-symbols-outlined text-[120px]" data-weight="fill">visibility</span>
-</div>
-<div class="relative z-10">
-<h2 class="font-headline-lg md:font-display text-headline-lg-mobile md:text-headline-lg text-on-primary-container mb-4 flex items-center gap-3">
-<span class="material-symbols-outlined text-secondary" data-weight="fill">lightbulb</span> Our Vision
+                </div>
+            </div>
+            <div class="bg-primary-container rounded-2xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center min-h-[320px] polaroid-shadow">
+                <div class="absolute bottom-0 left-0 p-8 opacity-10">
+                    <span class="material-symbols-outlined text-[120px]">visibility</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-headline-lg md:font-display md:text-[32px] font-bold text-on-primary-container mb-4 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">lightbulb</span> Our Vision
                     </h2>
-<p class="font-body-md text-on-primary-fixed-variant text-lg">
+                    <p class="font-body-md text-on-primary-container text-lg">
                         A world where our most precious memories aren't trapped behind glass screens. We envision homes filled with physical albums, fridges covered in tiny prints, and a culture that values the slow, intentional act of remembering through the simple joy of holding a photograph.
                     </p>
-</div>
-</div>
-</section>
-<!-- Meet the Team -->
-<section class="flex flex-col gap-12">
-<div class="text-center max-w-2xl mx-auto flex flex-col gap-4">
-<h2 class="font-display text-display text-primary">Meet Our Team</h2>
-<p class="font-body-md text-on-surface-variant">
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Team -->
+        <section class="flex flex-col gap-12">
+            <div class="text-center max-w-2xl mx-auto flex flex-col gap-4">
+                <h2 class="font-display text-[40px] font-bold text-primary">Meet Our Team</h2>
+                <p class="font-body-md text-on-surface-variant">
                     We're a quirky bunch of developers, designers, and dreamers united by our love for all things nostalgic and cute. Say hello to the faces behind the prints!
                 </p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 pb-8">
-<!-- Team Member 1 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="images/nicole.jpeg" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Nicole</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is Nicole ,Health,Safety and Environment student, rugby player, and music lover. I enjoy playing instruments, exploring new adventures, and taking on challenges—just keep the snakes away! 🐍😂</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 2 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="images/mann.jpeg" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Mann</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is mann. I'm aspiring to become a qualified health practitioner in order to support a community in the best way i can. I'm also interested in developing my interpersonal and writing skills.</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 3 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="images/aleeya.jpeg" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Aleeya</h3>
-
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is Aleeya Isabella Anak Martin, a student from Miri, Sarawak, Malaysia, preparing to embark on my Bachelor’s journey after completing the English Bridging program. Music has always been close to my heart. I enjoy singing and have proudly won competitions that deepened my love for performance. In 2021, I also ventured into modeling under Miss Grand Miri, an experience that remains a memorable chapter in my life. With a foundation in electrical and electronic studies and a growing interest in investment, I strive to balance intellect with creativity. I aspire to cultivate a future defined by academic excellence, artistic expression, and personal refinement.</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 4 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
- 
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 5 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
-
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 6 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 7 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 8 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
-
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 9 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 10 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Your Name</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
-                        
-                    </div>
-                </div>
-<!-- Team Member 11 -->
-<div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
-                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
-                        
-                        <!-- [ CHANGE IMAGE HERE ] Paste your image link inside the src="" quotes below -->
-                        <img class="w-full h-full object-cover" src="images/emily.jpeg" alt="Team Member Photo">
-                        
-                    </div>
-                    <div class="text-center">
-                        
-                        <!-- [ CHANGE NAME HERE ] -->
-                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Emily</h3>
-                        
-                        <!-- [ CHANGE INTRODUCTION HERE ] -->
-                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is Emily, and I'm a software engineering student who loves coding and cake. When I'm not fixing bugs in my programs, I'm in the kitchen trying new baking recipes. Some turn out great, some are a mess, but I always have fun. I also love to travel and taste new foods from different places. On the badminton court, I play hard and smash like a pro. My friends say I bring the same energy to coding and baking. Life is about trying new things, making mistakes, and having a good time. Let's make something awesome together!</p>
-                        
-                    </div>
-                </div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/30 dark:border-outline/20 full-width bottom-0 mt-auto">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-container-margin py-12 max-w-7xl mx-auto gap-8">
-<div class="font-display text-headline-md font-bold text-primary">
-                PocketPolaroid
             </div>
-<div class="flex flex-wrap justify-center gap-6"><a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors cursor-pointer" href="https://www.instagram.com/pocketpolaroids_?igsh=bjdxZXkwajd0MHk2&amp;utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors cursor-pointer" href="https://www.tiktok.com/@pocketpolaroids_?_r=1&amp;_t=ZS-98ekKNzyJ73" target="_blank" rel="noopener noreferrer">TikTok</a></div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 pb-8">
+                
+                <!-- Team Member 1 (Nicole) -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="images/nicole.jpeg" alt="Nicole">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Nicole</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is Nicole, Health, Safety and Environment student, rugby player, and music lover. I enjoy playing instruments, exploring new adventures, and taking on challenges—just keep the snakes away! 🐍😂</p>
+                    </div>
+                </div>
 
-</div>
-</footer>
+                <!-- Team Member 2 (Mann) -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="images/mann.jpeg" alt="Mann">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Mann</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is mann. I'm aspiring to become a qualified health practitioner in order to support a community in the best way i can. I'm also interested in developing my interpersonal and writing skills.</p>
+                    </div>
+                </div>
 
+                <!-- Team Member 3 (Aleeya) -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="images/aleeya.jpeg" alt="Aleeya">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Aleeya</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is Aleeya Isabella Anak Martin, a student from Miri, Sarawak, preparing to embark on my Bachelor’s journey. Music has always been close to my heart. I enjoy singing and won competitions that deepened my love for performance. In 2021, I ventured into modeling under Miss Grand Miri!</p>
+                    </div>
+                </div>
 
+                <!-- Team Member 4 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
 
+                <!-- Blank Team Member 5 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
 
+                <!-- Blank Team Member 6 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
+                
+                <!-- Blank Team Member 7 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-odd relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 washi-tape z-10"></div>
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
 
+                <!-- Blank Team Member 8 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
 
+                <!-- Blank Team Member 9 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
 
+                <!-- Blank Team Member 10 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="" alt="Team Member">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Your Name</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">Write a short, fun introduction about yourself right here!</p>
+                    </div>
+                </div>
 
-</body></html>
+                <!-- Blank Team Member 11 -->
+                <div class="bg-surface-container-lowest p-polaroid-padding-top pb-polaroid-padding-bottom rounded-xl polaroid-shadow rotate-card-even relative hover:-translate-y-2 transition-transform duration-300">
+                    <div class="aspect-square w-full bg-surface-variant rounded overflow-hidden relative mb-4">
+                        <img class="w-full h-full object-cover" src="images/emily.jpeg" alt="Emily">
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Emily</h3>
+                        <p class="font-accent-handwritten text-[16px] text-on-surface-variant leading-tight">My name is Emily, and I'm a software engineering student who loves coding and cake. When I'm not fixing bugs, I'm in the kitchen trying new baking recipes. On the badminton court, I play hard and smash like a pro. Life is about trying new things and making mistakes!</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low border-t border-outline-variant/30 full-width bottom-0 mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-container-margin py-12 max-w-7xl mx-auto gap-8">
+            <a href="index.html" class="font-display text-[20px] font-bold text-primary cursor-pointer hover:text-secondary transition-colors">PocketPolaroid</a>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.instagram.com/pocketpolaroids_?igsh=bjdxZXkwajd0MHk2&amp;utm_source=qr" target="_blank">Instagram</a>
+                <a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.tiktok.com/@pocketpolaroids_?_r=1&amp;_t=ZS-98ekKNzyJ73" target="_blank">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuBtn.querySelector('.material-symbols-outlined');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                
+                if (mobileMenu.classList.contains('flex')) {
+                    menuIcon.textContent = 'close';
+                } else {
+                    menuIcon.textContent = 'menu';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
